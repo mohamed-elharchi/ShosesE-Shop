@@ -206,6 +206,8 @@
                 });
             });
 
+
+            
             $(document).on('click', '.minus', function() {
                 var countElement = $(this).next('.count');
                 var count = parseInt(countElement.text());
