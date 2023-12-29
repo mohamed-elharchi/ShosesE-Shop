@@ -1,0 +1,830 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,500&display=swap');
+
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Ubuntu;
+
+        }
+        body{
+            position:relative;
+        }
+        .main{
+            position:relative;
+            width: 100%;
+            margin: 30px auto;
+            display: flex;
+            flex-wrap:wrap;
+            justify-content: space-evenly;            
+        }
+        .main .card{
+            position:relative;
+            width: 22%;
+            border: 0px solid black;
+            border-radius: 15px; 
+            margin: 15px; 
+            margin-bottom:18px;
+            transition:0.5s;
+        }
+        .main .card:hover{
+            position:relative;
+            width: 22%;
+            border: 1px solid lightgray;
+            border-radius: 15px; 
+            margin: 15px; 
+        }
+        .main .card .image{
+            width: 100%;
+            height:300px;
+            margin-bottom: 5px;
+            overflow: hidden;
+
+        }
+        .main .card .image img{
+            position:relative;
+            width: 100%;
+            height: 100%;
+            border: 0px solid black;
+            border-radius: 15px;
+            object-fit: scale-down;
+        }
+        .main .card .infoP{
+            align-items: center;
+           
+        }
+        .title{
+            color:black;
+            margin:10px;
+            font-weight: 500;
+
+        }
+        .main .card .infoP p{
+            font-size: 1.2rem;
+            margin:10px;
+
+        }
+        .dell {
+            font-size:0.7em;
+            text-decoration: line-through;
+        }
+        .main .card .infoP .rate{
+            font-size: 1rem;
+            color: grey;
+        }
+        .allP h1{
+            margin:15px;
+            font-weight: bold; 
+        }
+        .line hr{
+            width:90%;
+            position:relative;
+            top:50%;
+            left:50%;
+            transform:translate(-50% ,-50%);
+            color:black;
+            margin-top:20px;
+            margin-bottom:20px;
+        }
+        
+        a{
+            text-decoration:none;
+            font-weight: bold;
+            color:black;
+
+        }
+        
+        .logo{
+            width:9%;
+            height: 110px;
+            cursor: pointer;
+        }
+        .logo img {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            border-radius: 15px;
+            background-position:center;
+        }
+        header{
+            display: flex;
+            background-color: white;
+            justify-content:space-between;
+            align-items:center;
+            border: none;
+            border-bottom:1px solid grey;
+            margin-bottom:20px;
+            box-shadow: 0px 1px 6px  grey;
+        }
+        .nav-side  {
+            margin-right:30px;
+            position: relative;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;            
+        }
+        .line {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ff0000;
+            transition: width 0.3s ease-out;
+        }
+
+        .iconshop {
+            display:flex;
+            justify-content:end ;
+        }
+        .iconshop i {
+            padding:15px;
+            margin-left:15px;
+            margin-right:15px;
+            cursor: pointer;
+
+
+        }
+        .nav-side a {
+            position: relative;
+            z-index: 1;
+            margin-right:10px;
+            text-decoration: none;
+            color: #000000;
+            padding: 0 10px;
+        }
+
+        .nav-side a:hover .line {
+            width: 100%;
+        }
+        .nav-side  i{
+            padding:15px;
+            margin:2px;
+            cursor: pointer;
+            font-size:1.3em;
+        }
+        .nav-side  i:hover{
+            color: #528779
+        }
+        .nav-side  .quantity{
+            background: red;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            position: absolute;
+            top: 0px;
+            left: 96%;
+            padding:0px 5px;
+        }
+        /* add to cart css */
+        .cart{
+            position: fixed;
+            top:0;
+            left:100%;
+            width: 500px;
+            background-color: white;
+            height: 100vh;
+            overflow-y: auto;
+            transition: 0.5s;
+        }
+        .active .cart{
+            left: calc(100% - 500px);
+        }
+        .active .container{
+            transform: translateX(-200px);
+        }
+        .active header{
+            transform: translateX(-200px);
+        }
+        .cart h1{
+            justify-content:center;
+            color: black;
+            font-weight: 100;
+            margin: 0;
+            padding: 0 20px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
+        .cart .checkOut{
+            position: fixed;
+            bottom: 0;
+            width: 500px;
+            display: flex;
+
+        }
+        
+        .cart .closeShopping{
+            padding:15px;
+            font-size: 1.2em;
+        }
+        .cart .closeShopping i{
+            font-size:1.2em;
+        }
+        .cart .checkOut div:nth-child(1){
+            background-color: #e8f25e;
+            width:50%;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .cart .checkOut div:nth-child(2){
+            background-color: black;
+            color: #fff;
+            width:50%;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .cart .checkOut div:nth-child(2):hover{
+            background-color: #00D100;
+            color: black;
+        }
+        .dsq button {
+            cursor: pointer;
+            outline:none;
+            border: none;
+            background-color:black ;
+            font-size: 1.5em;
+            padding: 21px 67px;
+            color: #fff;
+            
+        } 
+        .dsq button:hover{
+            background-color: #00D100;
+            color: black;
+        }
+        .listCard li{
+            display: grid;
+            grid-template-columns: 100px repeat(3, 1fr);
+            color: black;
+            row-gap: 10px;
+            margin:15px;
+        }
+        .listCard li div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .listCard li img{
+            width: 100%;
+        }
+        .listCard li .sell{
+            margin-left:10px;
+            margin-right:20px;
+
+        }
+   
+        .listCard li button{
+            background-color: grey;
+            border: none;
+            padding:5px 10px;
+            margin: 0 10px;
+            font-size:1em;
+            cursor: pointer;
+        }
+        .listCard .count{
+            margin: 0 10px;
+        }
+        /*la fin  add to cart css */
+
+
+        .ShowMore{
+            width:100%;
+            display:flex;
+            justify-content:center;
+            margin-bottom:2.5%;
+        }
+        .ShowMore .btn-show-more {
+            width:15%;
+            height: 40px;
+            border:1px solid white;           
+            border-radius:15px;
+            cursor: pointer;
+            font-size:1em;
+            background:grey
+
+            
+        }
+        .ShowMore .btn-show-more:hover{
+            color:white;
+            background:black
+        }
+        /* .bnt{
+            margin-left: 20px;
+            padding: 12px 22px;
+            background-color: rgba(0, 136, 169, 1);
+            border: none;            
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.5s ease 0s;
+            color: rgb(255, 251, 251);
+            align-self: center;
+            margin-right: 17px;
+        }
+        .admin{
+            text-decoration: none;
+            color: aqua;
+            font-size: larger;
+            font-weight: bold;
+        } */
+        .lin {
+            text-decoration:none;
+        }
+        /* new */
+        .container{
+            position: relative;
+            width: 100%;
+        }
+        .firstSlid{
+            display:flex;
+            justify-content: space-evenly;
+            margin-bottom: 20px;
+        }
+        .leftside {
+            width:45%;
+            height:70%;
+            position: relative;
+        }
+        .leftside img {
+            margin:5px;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            border-radius: 15px;
+            background-position:center;
+        }
+        .leftside h1{
+            position: absolute;
+            left: 20%;
+            top: 55%;
+            color: rgb(0, 0, 0);
+            font-size: 2.5em;
+            font-weight: bolder;
+            transition:1s;
+            cursor: pointer;
+
+        }
+
+        .rigthside {
+            width:45%;
+            height:70%;
+            position: relative;
+
+        }
+        .rigthside img {
+            margin:5px;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            background-size: cover;
+            background-position:center;
+        }
+        .rigthside .Sport{
+            position: absolute;
+            left: 20%;
+            top: 12%;
+            color: rgb(255, 255, 255);
+            font-size: 2.5em;
+            font-weight: bolder;
+            transition:1s;
+            cursor: pointer;
+
+        }
+        .rigthside .Fashion{
+            position: absolute;
+            left: 20%;
+            top: 60%;
+            color: rgb(255, 255, 255);
+            font-size: 2.5em;
+            font-weight: bolder;
+            transition:1s;
+            cursor: pointer;
+
+        }
+        .firstSlid .leftside h1:hover{
+            position: absolute;
+            left: 23%;
+            top: 55%;
+            color: rgb(0, 0, 0);
+            font-size: 2.8em;
+            font-weight: bolder;
+        }
+        .rigthside .Sport:hover{
+            position: absolute;
+            left: 23%;
+            top: 12%;
+            color: rgb(255, 255, 255);
+            font-size: 2.8em;
+            font-weight: bolder;
+        }
+        .rigthside .Fashion:hover{
+            position: absolute;
+            left: 23%;
+            top: 60%;
+            color: rgb(255, 255, 255);
+            font-size: 2.8em;
+            font-weight: bolder;
+        }
+
+
+        /* offer */
+        .offer{
+            margin-top: 100px;
+            margin-bottom: 100px;
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%);
+            width: 85%;
+            height: 150px;
+            background-image: url(../imagee/offer.jpg);
+            background-size: cover;
+            background-position:center;
+            border-radius: 5px;
+            transition:0.2s
+        }
+        .offer:hover{
+            background-image: url(../imagee/ss.jpg);
+ 
+        }
+        .offer .oftxt  {
+            margin-top: 39px;
+        }
+        .offer .oftxt h1 {
+            font-weight: bolder;
+            font-size: 2.6em;
+            margin-bottom: 15px;
+        }
+        .offer .oftxt h3 {
+            font-weight: bolder;
+            color: grey;
+            margin-bottom: 15px;
+        }
+        .offer .ofbtn  {
+            margin-top: 55px;
+        }
+        .offer .ofbtn a .bttn{
+            padding: 13px 30px;
+            background: linear-gradient(to right, #a09e9e 50%, gold 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            border: none;
+            font-weight: 900;
+            border-radius: 5px;
+            transition: background-position 0.5s ease;
+            cursor: pointer;
+        }
+        .offer .ofbtn a .bttn:hover {
+            background-position: left bottom;
+        }
+
+        .collection{
+            display:flex;
+            justify-content: space-around;
+            margin-top:10%;
+            margin-bottom:10%;
+            position: relative;
+
+        }
+        .side1{
+            height:50%;
+            width:48%;
+        }
+        .side2{
+            height:50%;
+            width:48%;
+        }
+        .side1 img {
+            height: 100%;
+            width:100%;
+            border-radius:15px;
+        }
+        .side2 img {
+            height: 100%;
+            width:100%;
+            border-radius:15px;
+        }
+        .side1 h1{
+            position: absolute;
+            left: 10%;
+            top: 45%;
+            color: rgb(0, 0, 0);
+            font-size: 3em;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+        .side2 h1{
+            position: absolute;
+            left: 60%;
+            top: 45%;
+            color: rgb(0, 0, 0);
+            font-size: 3em;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+        /* sliddddddddddddddddddddddddddddddddd */
+        .wrapper {
+            /* max-width: 1100px; */
+            width: 100%;
+            position: relative;
+        }
+            .wrapper i {
+            top: 50%;
+            height: 50px;
+            width: 50px;
+            cursor: pointer;
+            font-size: 1.25rem;
+            position: absolute;
+            text-align: center;
+            line-height: 50px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+            transform: translateY(-50%);
+            transition: transform 0.2s linear;
+        }
+        .wrapper i:active{
+            transform: translateY(-50%) scale(0.85);
+        }
+        .wrapper i:first-child{
+            left: 8px;
+        }
+        .wrapper i:last-child{
+            right: 8px;
+        }
+        .wrapper .carousel{
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc((100% /4));
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+        .carousel.no-transition {
+            scroll-behavior: auto;
+        }
+        .carousel .dragging {
+            scroll-snap-type: none;
+            scroll-behavior: auto;
+        }
+        .carousel .dragging .card {
+            cursor: grab;
+            user-select: none;
+        }
+        .carousel :where(.card, .img) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .carousel .card {
+            scroll-snap-align: start;
+            list-style: none;
+            cursor: pointer;
+            flex-direction: column;
+            margin: 10px;
+        }
+        .card .img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* menu toggle */
+        .menuu{
+            display:none;
+            cursor: pointer;
+            margin:10px auto;
+            
+            
+            
+        }
+        .barr{
+            display:block;
+            width:25px;
+            height:3px;
+            margin:5px auto;
+            -webkit-transition:all 0.3 ease-in-out;
+            transition:all 0.3 ease-in-out;
+            background-color:black;
+        }
+        .linksMenu{
+            display:flex;
+        }
+        
+       
+
+        @media screen and (max-width: 900px) {
+            .wrapper .carousel {
+                grid-auto-columns: calc((100% / 2) - 9px);
+            }
+            
+            .main .card{
+                width:29%;
+            }       
+            .main .card:hover{
+                width: 29%;
+            }
+
+        }
+
+        @media screen and (max-width: 800px) {
+             .main .card{
+                width:40%;
+            }       
+            .main .card:hover{
+                width: 40%;
+            }
+            .leftside h1{
+                font-size: 2em
+            }
+            .firstSlid .leftside h1:hover{
+                font-size: 2.2em
+            }
+            .rigthside .Sport{
+                font-size: 2em
+            }
+            .rigthside .Sport:hover{
+                font-size: 2.2em
+            }
+            .rigthside .Fashion{
+                font-size: 2em
+            }
+            .rigthside .Fashion:hover{
+                font-size: 2.2em
+            }
+            .offer .oftxt h1{
+                font-size: 2.2em;
+            }
+            .ShowMore .btn-show-more {
+                width:20%;
+            }
+            .menuu{
+                display:block;
+            }
+            .menuu.active .barr:nth-child(2){
+                opacity: 0;
+            }
+            .menuu.active .barr:nth-child(1){
+                transform:translateY(8px) rotate(45deg);
+            }
+            .menuu.active .barr:nth-child(3){
+                transform:translateY(-8px) rotate(-45deg);
+            }
+            .linksMenu{
+                flex-direction:column;
+                position: fixed;
+                top:60px;
+                left:100%;
+                width: 100%;
+                transition: 0.5s;
+                background: grey;
+                margin-top:30px;
+                transition:0.3s;
+                background: grey;
+                text-align:center;
+                
+            }
+            .linksMenu a {
+                margin:25px;
+            }
+            .linksMenu.active{
+                left: calc(100% - 100%);
+            }
+            .container{
+                transition:0.3s;
+            }
+            .container.active{
+                transform: translateY(400px);   
+            }
+
+            .nav-side  .quantity{
+                position: absolute;
+                left: 65%;
+            }
+         
+          
+           
+           
+            
+            
+        }
+        
+        @media screen and (max-width: 700px) {
+            .offer .oftxt h1{
+                font-size: 1.5em;
+                margin-left:15px;
+            }
+            .offer .oftxt h3{
+                margin-left:15px;
+            }
+            .offer .ofbtn a .bttn{
+                padding: 10px 27px;
+                font-weight: 800;  
+            }
+            .offer .ofbtn  {
+                margin-right: 15px;
+            }
+            .leftside h1{
+                font-size: 1.6em
+            }
+            .firstSlid .leftside h1:hover{
+                font-size: 1.7em
+            }
+            .rigthside .Sport{
+                font-size: 1.8em
+            }
+            .rigthside .Sport:hover{
+                font-size: 2em
+            }
+            .rigthside .Fashion{
+                font-size: 1.8em
+            }
+            .rigthside .Fashion:hover{
+                font-size: 2em
+            }
+            
+        }
+        @media screen and (max-width: 600px) {
+            .wrapper .carousel {
+                grid-auto-columns: 100%;
+            }
+            .ShowMore .btn-show-more {
+                width:30%;
+            }
+            .leftside h1{
+                font-size: 1.4em
+            }
+            .firstSlid .leftside h1:hover{
+                font-size: 1.5em
+            }
+            .rigthside .Sport{
+                font-size: 1.6em
+            }
+            .rigthside .Sport:hover{
+                font-size: 1.8em
+            }
+            .rigthside .Fashion{
+                font-size: 1.6em
+            }
+            .rigthside .Fashion:hover{
+                font-size: 1.8em
+            }
+        }
+        @media screen and (max-width: 500px) {
+            .main .card{
+                width:80%;
+            }       
+            .main .card:hover{
+                width: 80%;
+            }
+            .main{
+                justify-content: center;            
+            }
+            .cart{
+                width: 100%;
+            }
+            .active .cart{
+                left: calc(100% - 100%);
+            }
+            .cart .checkOut{
+                width: 100%;
+            }
+            .listCard li{
+                grid-template-columns: 88px repeat(3, 1fr);
+            }
+            .firstSlid{
+                flex-direction:column;
+                justify-content: center;
+                align-items:center;
+                align-self:center;
+            }
+            .leftside {
+                width:95%;   
+            }
+            .rigthside{
+                width:95%;
+            }
+            .leftside h1{
+                font-size: 1.6em
+            }
+            .firstSlid .leftside h1:hover{
+                font-size: 1.8em
+            }
+            
+        }
+        
