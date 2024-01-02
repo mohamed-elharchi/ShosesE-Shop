@@ -19,45 +19,46 @@
     <link rel="stylesheet" href="css/styleee.css">
 </head>
 <body>
-    <header>
+    <div class="first_off">
+        <p> Today Offer: $20 OFF orders $300 or more with code “SNEAKER002” + Free shipping on orders over $60!</p>
+    </div>
+    <header id="headerr">
         <div class="logo">
-            <!-- <h1 class="logo">M<span>y</span>Store</h1> -->
-            <img src="imagee/logo.png" alt="logo">
+            <h1 class="logo-text"><span>U</span>rban <span>S</span>trides</h1>
+            <!-- <img src="imagee/logo.png" alt="logo"> -->
         </div>
 
         <nav class="nav-side">
             <div class="linksMenu">
-                <a href="clientpage.php" class="navlink">
+                <a href="clientpage.php" class="navlink" >
                     Home
                     <div class="line"></div>
                 </a>
 
-                <a href="#men" class="navlink">
+                <!-- <a href="#men" class="navlink">
                     Men
                     <div class="line"></div>
-                </a>
+                </a> -->
 
-                <a href="#Women" class="navlink">
-                    Women
+                <a href="#Unique Shoes" class="navlink">
+                    Unique Shoes
                     <div class="line"></div>
                 </a>
 
-                <a href="#Featured Products" class="navlink">
+                <a href="#Featured Products" class="navlink" >
                     Featured Products
                     <div class="line"></div>
                 </a>
 
-                <a href="contact.php" class="navlink">
+
+                <!-- <a href="contact.php" class="navlink">
                     Contact As
                     <div class="line"></div>
                 </a>
-                
+                 -->
             </div>
-        <div class="nav-icon">
-            <i class="fa-solid fa-user"></i>
-            <i id="opencard" class="fa-solid fa-cart-shopping"></i>
-            <span id="quantity" class="quantity">0</span>
-        </div>
+           
+  
         <div class="menuu">
             <span class="barr"></span>
             <span class="barr"></span>
@@ -65,14 +66,80 @@
         </div>
 
     </nav>
-  
-   
-    
-   
+        <div class="nav-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span class="line3amodi"></span>
+            <i class="fa-solid fa-user"></i>
+            <i id="opencard" class="fa-solid fa-cart-shopping"></i>
+            <span id="quantity" class="quantity">0</span>
+        </div>
     </header>
 
+    <div class="firstPage">
+        <div class="offside1">
+            <h1>XTREMA 3</h1>
+            <h4>COMFY AND TRENDY</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem alias reiciendis quod illo, cupiditate obcaecati iste </p>
+            <div class='newp'>
+                <div class="newpi1">
+                    <img src="img/black-sneaker.png"  alt="">
+                </div>
+                <div class="newpi1">
+                    <img src="img/xtrema-e1616727531673 (1).png" alt="">
+                </div>
+            </div>
+            <button class="newpBtn">SHOP HERE</button>
+        </div>
+        <div class="offside2">
+            <div class="aa1">
+                <i class="fa-solid fa-shoe-prints"></i>
+                <h3>STRONG & TRENDY</h3>
+            </div>
+            <div class="aa2">
+                <i class="fa-solid fa-feather"></i>
+                <h3>ZUPER LIGHTWEIGHT</h3>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+    window.onscroll = function() { scrollFunction() };
+
+    function scrollFunction() {
+      var navbar = document.getElementById("headerr");
+
+      if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+        navbar.classList.add("fixed");
+        navbar.style.top = "0";
+      } else {
+        navbar.classList.remove("fixed");
+        navbar.style.top = "50px"; /* Move it back above the viewport */
+      }
+    }
 
 
+  </script>
+
+        <div class="siteInfo">
+            <div class="siteInfo_elemnt">
+                <i class="fa-solid fa-circle-check"></i>
+                <h5>ORIGINAL PRODUCT</h5>
+            </div>
+            <div class="siteInfo_elemnt">
+                <i class="fa-solid fa-regular fa-bag-shopping"></i>
+                <h5>INTERESTING PROMO & DEALS</h5>
+            </div>
+            <div class="siteInfo_elemnt">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+                <h5>30 DAYS MONEY-BACK GUARANTEE</h5>
+            </div>
+            <div class="siteInfo_elemnt">
+                <i class="fa-solid fa-award"></i>
+                <h5>EXPEREINCED SELLER</h5>
+            </div>
+        </div>
+<!-- contenttttttttttttttttttttttttttttttttttttttt -->
                 
 
     <div class="container"> <!-- div li jama3 kolxi ma3ada pop up li kaynin-->
@@ -80,7 +147,7 @@
         <!-- slid1 dfddddddddddddddddddddddddddddddddddddddddddddddd -->
 
         <div class="firstSlid">
-            <div class="leftside">
+            <!-- <div class="leftside">
                 <img src="imagee/bb.jpg" alt="">
                 <h1>Stylish shoes for <br> Women</h1>
             </div>
@@ -91,12 +158,26 @@
                 <img src="imagee/a.jpg" alt="">
                 <h1 class="Fashion">Fashion Shoes</h1>
 
+            </div> -->
+            <div class="Categories">
+                <div class="leftLine"></div>
+                <h2><pre>  </pre> Shoes Categories <pre>  </pre></h2>
+                <div class="rightLine"></div>
+                
             </div>
+            <div class="cateImage">
+                <img src="img/mens.png" alt="img1" >
+                <img src="img/womens.png" alt="img2" >
+                <img src="img/1.7.jpg" alt="img3" >
+            </div>
+            <button class="menBTN">MEN<i class="fa-solid fa-arrow-right"></i></button>
+            <button class="womenBTN">WOMEN<i class="fa-solid fa-arrow-right"></i></button>
+            <button class="sportBTN">SPORT<i class="fa-solid fa-arrow-right"></i></button>
         </div>
 
         <!-- discount dfddddddddddddddddddddddddddddddddddddddddddddddd -->
 
-        <div class="offer">
+        <!-- <div class="offer">
             <?php
                $sql="SELECT * from discount  ORDER BY id DESC LIMIT 1";
                $reqq=$db->prepare($sql);
@@ -114,7 +195,8 @@
                 <a href="contact.php"><button class="bttn">Email Me</button></a>
             </div>
 
-        </div>
+        </div> -->
+        
 
                 <!-- Featured Products dfddddddddddddddddddddddddddddddddddddddddddddddd -->
 
@@ -392,7 +474,7 @@
         <!-- Unique Shoes dfddddddddddddddddddddddddddddddddddddddddddddddd -->
 
       <div class="allP">
-            <h1 id="Featured Products">Unique Shoes</h1>
+            <h1 id="Unique Shoes">Unique Shoes</h1>
         </div>
         <div class="wrapper">
             <i id="left" class="fa-solid fa-angle-left"></i>
