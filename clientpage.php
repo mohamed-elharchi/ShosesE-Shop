@@ -179,18 +179,18 @@
 
         <!-- <div class="offer">
             <?php
-               $sql="SELECT * from discount  ORDER BY id DESC LIMIT 1";
-               $reqq=$db->prepare($sql);
-               $reqq->execute();
-              while($donnees=$reqq->fetch()){
+            //    $sql="SELECT * from discount  ORDER BY id DESC LIMIT 1";
+            //    $reqq=$db->prepare($sql);
+            //    $reqq->execute();
+            //   while($donnees=$reqq->fetch()){
 
             ?>
             <div class="oftxt" >
             
-                <h1><?php echo $donnees["title"] ?></h1>
-                <h3><?php echo $donnees["subtitle"] ?></h3>
+                <h1><?php // echo $donnees["title"] ?></h1>
+                <h3><?php // echo $donnees["subtitle"] ?></h3>
             </div>
-            <?php } ?>
+            <?php // } ?>
             <div class="ofbtn">
                 <a href="contact.php"><button class="bttn">Email Me</button></a>
             </div>
