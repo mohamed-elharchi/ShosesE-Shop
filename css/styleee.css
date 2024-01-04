@@ -11,6 +11,7 @@
         }
         body{
             /* position:relative; */
+            overflow-x: hidden;
         }
         .main{
             position:relative;
@@ -18,42 +19,38 @@
             margin: 30px auto;
             display: flex;
             flex-wrap:wrap;
-            justify-content: space-evenly;            
+            justify-content: space-evenly;  
+            background-color: #ECECEC;
+          
         }
         .main .card{
             position:relative;
-            width: 22%;
-            border: 0px solid black;
-            border-radius: 15px; 
-            margin: 15px; 
-            margin-bottom:18px;
-            transition:0.5s;
+            width: 20%;
+            margin: 10px;
+            margin-top:5%;
+            margin-bottom:5%;
+            background-color: white;
+
         }
-        .main .card:hover{
-            position:relative;
-            width: 22%;
-            border: 1px solid lightgray;
-            border-radius: 15px; 
-            margin: 15px; 
-        }
+        
         .main .card .image{
             width: 100%;
-            height:300px;
             margin-bottom: 5px;
             overflow: hidden;
+            margin-top: 5px;
 
         }
         .main .card .image img{
             position:relative;
             width: 100%;
-            height: 100%;
-            border: 0px solid black;
-            border-radius: 15px;
-            object-fit: scale-down;
+            transition: transform 1s ease-out;
         }
+        .main .card .image:hover img{
+            transform: scale(1.1);
+        }
+        
         .main .card .infoP{
             align-items: center;
-           
         }
         .title{
             color:black;
@@ -64,6 +61,7 @@
         .main .card .infoP p{
             font-size: 1.2rem;
             margin:10px;
+            text-transform: uppercase;
 
         }
         .dell {
@@ -73,6 +71,9 @@
         .main .card .infoP .rate{
             font-size: 1rem;
             color: grey;
+        }
+        .allP {
+            margin-top: 8%;
         }
         .allP h1{
             margin:15px;
@@ -133,7 +134,7 @@
         }
         .firstPage {
             display: flex;
-            background-image: url("../img/2back.PNG");
+            /* background-image: url("../img/2back.PNG"); */
             background-size: cover;
             height: 100vh;
             text-align: center;
@@ -158,6 +159,7 @@
             margin-left:15px;
             color: white;
             letter-spacing: 2px;
+            text-transform: uppercase;
         }
         .firstPage .offside1 h4{
             font-size:1.2em;
@@ -166,6 +168,8 @@
             margin-bottom: 20px;
             margin-left:15px;
             color: white;
+            text-transform: uppercase;
+
         }
         .firstPage .offside1 p{
             margin-left:15px;
@@ -209,12 +213,16 @@
             word-spacing: 3px;
             letter-spacing: 2px;
             margin-left: 10px;
+            text-transform: uppercase;
+
         }
         .firstPage .offside2 .aa2 h3 {
             font-size: 1.2em;
             word-spacing: 3px;
             letter-spacing: 2px;
             margin-left: 10px;
+            text-transform: uppercase;
+
         }
         .firstPage .offside2 .aa2 i {
             align-items: center;
@@ -279,15 +287,23 @@
 
         .iconshop {
             display:flex;
-            justify-content:end ;
+            justify-content:end;
         }
-        .iconshop i {
-            padding:15px;
-            margin-left:15px;
-            margin-right:15px;
+        .iconshop .addto{
             cursor: pointer;
-
-
+            background-color: black; 
+            margin: 10px;
+        }
+        .iconshop .addto i {
+            color: white;
+            padding: 10px;
+            
+        }
+        .iconshop .addto:hover {
+            background-color: white; 
+        }
+        .iconshop .addto:hover i{
+            color: rgb(0, 0, 0);
         }
         .nov-icon {
             padding:15px;
@@ -297,7 +313,7 @@
             color: white;
         }
         .first_off {
-            background-color: #07026c;
+            background-color: #01225A;
             height: 50px;
             display: flex;
             justify-content: center;
@@ -489,20 +505,31 @@
 
         .ShowMore{
             width:100%;
+            height: auto;
             display:flex;
             justify-content:center;
-            margin-bottom:2.5%;
+            margin-bottom: 25px;
+
         }
         .ShowMore .btn-show-more {
             width:15%;
-            height: 40px;
+            padding: 15px;
             border:1px solid white;           
-            border-radius:15px;
             cursor: pointer;
             font-size:1em;
-            background:grey
-
+            background:#ECECEC;
+            font-weight: 600;
+            word-spacing: 5px;
+          
             
+        }
+        .ShowMore .btn-show-more  i {
+            margin-left: 20px;
+            transition: transform 0.6s ease;
+        }
+        .ShowMore .btn-show-more:hover  i {
+            transform: scaleX(-1);
+
         }
         .ShowMore .btn-show-more:hover{
             color:white;
@@ -538,6 +565,7 @@
         .firstSlid{
             width: 100;
             position: relative;
+            margin-bottom: 5%;
         }
         .firstSlid .menBTN{
             position: absolute;
@@ -727,7 +755,89 @@
             font-weight: bolder;
         }
  */
+        .hotproduct {
+            display: flex;
+            justify-content:space-evenly;
+            width: 100%;
+            margin-top: 10%;
+            margin-bottom: 10%;
+        }
+        .hotproduct  .H_P_Cart {
+            width: 17%;
+            height: auto;
+            overflow: hidden;
+            background-color: #ECECEC;  
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center;   
+        }
+        .hotproduct .H_P_Cart  img {
+            width:70%;
+            margin: 20px;
+            transition: transform 0.3s ease;
+        }
+        .hotproduct .H_P_Cart  img:hover {
+            transform: scale(1.2);
+        }
+        .hotproduct .H_P_Cart  button {
+            padding: 10px;
+            margin: 15px;
+            cursor: pointer;
+            border: 1px solid black;
+            color: black;
+            letter-spacing: 2px;
+            font-size: 1em;
+            font-weight: 500;
 
+        }
+        .hotproduct .H_P_Cart .prix {
+            color: #060087;
+        }
+        .hotproduct .hotPside {
+            width: 20%;
+            background: linear-gradient(to bottom right,  #01225A,  #01225A, #01225A, #01225A,#FF9916);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            padding: 10px;
+        }
+        .hotproduct .hotPside .tttppp {
+            color:white;
+            margin-bottom: 40px;
+            margin-left: 15px;
+        }
+        .hotproduct .hotPside .tttppp i{
+            color:#FF9916;
+            margin-right: 3px;
+        }
+        .hotproduct .hotPside p {
+            color:white;
+            margin-bottom: 40px;
+            margin-left: 15px;
+
+        }
+        .hotproduct .hotPside button {
+            background-color: #01225A;
+            padding: 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            border: 1px solid rgb(255, 255, 255);
+            color: rgb(255, 255, 255);
+            letter-spacing: 1px;
+            font-size: 0.6em;
+            font-weight: 500;
+            margin-left: 15px;
+
+        }
+        .hotproduct .hotPside button i {
+            margin-left: 20px;
+            transition: transform 0.6s ease;
+        }
+        .hotproduct .hotPside button:hover i {
+            transform: scaleY(-1);
+        }
         /* offer */
         /* .offer{
             margin-top: 100px;
@@ -749,6 +859,10 @@
             background-image: url(../imagee/ss.jpg);
  
         }
+        
+
+
+        
         .offer .oftxt  {
             margin-top: 39px;
         }
@@ -779,34 +893,151 @@
         .offer .ofbtn a .bttn:hover {
             background-position: left bottom;
         } */
+        .spinner {
+            position: absolute;
+            left: 48.5%;
+            transform: translate(-50);
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #5a646c;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto;
+          }
+          
+          .hidden {
+            display: none;
+          }
+          
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
 
-        .collection{
-            display:flex;
-            justify-content: space-around;
-            margin-top:10%;
-            margin-bottom:10%;
+
+        .collection {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 10%;
+            margin-bottom: 10%;
             position: relative;
-
+            width: 100%;
+            left: 50%;
+            transform: translate(-50%);
         }
-        .side1{
-            height:50%;
-            width:48%;
+        
+        .side1,
+        .side2 {
+            width: 50%;
+            display: flex;
+            margin: 20px;
+            justify-content: center;
+            align-items: center; /* Center vertically */
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
         }
-        .side2{
-            height:50%;
-            width:48%;
-        }
-        .side1 img {
-            height: 100%;
-            width:100%;
-            border-radius:15px;
-        }
+        
+        .side1 img,
         .side2 img {
-            height: 100%;
-            width:100%;
-            border-radius:15px;
+            width: 100%; /* Set the initial width to 100% */
+            height: auto; /* Maintain aspect ratio */
+            display: block;
+            margin: 0 auto; /* Center horizontally */
+            transition: transform 1s ease-out; /* Add a smooth transition effect */
+            transform-origin: center center; /* Set the transform origin to the center */
+            position: relative;
         }
-        .side1 h1{
+        
+        .side1 .leftSide::before,
+        .side1 .leftSide::after,
+        .side2 .rightSide::before,
+        .side2 .rightSide::after {
+            content: "";
+            position: absolute;
+            background: white;
+            width: 0;
+            height: 2px;
+            transition: all 0.5s ease-out;
+        }
+        
+        .side1:hover .leftSide::before,
+        .side1:hover .leftSide::after,
+        .side2:hover .rightSide::before,
+        .side2:hover .rightSide::after {
+            width: calc(100% - 4px);
+        }
+        
+        .side1 .leftSide::before {
+            top: 0;
+            left: 2px;
+        }
+        
+        .side1 .leftSide::after {
+            bottom: 0;
+            left: 2px;
+        }
+        
+        .side2 .rightSide::before {
+            top: 0;
+            right: 2px;
+        }
+        
+        .side2 .rightSide::after {
+            bottom: 0;
+            right: 2px;
+        }
+        
+        .side1:hover img,
+        .side2:hover img {
+            transform: scale(1.1); /* Scale the image by 1.1 times on hover */
+        }
+        
+        .side1 .leftSide,
+        .side2 .rightSide {
+            position: absolute;
+            left: 10%;
+            top: 60%;
+        }
+        
+        .side1 .leftSide h5,
+        .side2 .rightSide h5 {
+            color: white;
+            font-size: 1em;
+            font-weight: 600;
+            word-spacing: 4px;
+            letter-spacing: 2px;
+            margin: 10px;
+        }
+        
+        .side1 .leftSide h3,
+        .side2 .rightSide h3 {
+            color: white;
+            font-size: 1.4em;
+            font-weight: 600;
+            word-wrap: 4px;
+            letter-spacing: 2px;
+            margin: 10px;
+        }
+        
+        .side1 .leftSide button,
+        .side2 .rightSide button {
+            margin: 10px;
+            padding: 10px;
+            width: 70%;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+        }
+        
+        
+        /* Add styles for the button and other elements as needed */
+        
+        
+        
+        /* .side1 h1{
             position: absolute;
             left: 10%;
             top: 45%;
@@ -823,7 +1054,7 @@
             font-size: 3em;
             font-weight: bolder;
             cursor: pointer;
-        }
+        } */
         /* sliddddddddddddddddddddddddddddddddd */
         .wrapper {
             /* max-width: 1100px; */

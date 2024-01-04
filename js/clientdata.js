@@ -4,54 +4,64 @@
         $(document).ready(function() {
             var selectedProducts = [];
             var offset = 4;
-            $('#show-more-btn').on('click', function() {
-                $.ajax({
-                    url: 'fetch_articles.php',
-                    type: 'GET',
-                    data: { offset: offset },
-                    dataType: 'json',
-                    success: function(response) {
-                        console.log(response)
-                        if (response.length > 0) {
-                            var articlesHtml = '';
-
-                            response.forEach(function(article) {
-                                console.log(article)
-                                articlesHtml += '<div class="card">';
-                                articlesHtml += '<div class="image">';
-                                articlesHtml += '<img src="imagee/' + article.image + '" alt="image product">';
-                                articlesHtml += '</div>';
-                                articlesHtml += '<div class="infoP">';
-                                articlesHtml += '<p class="title">' + article.title + '</p>';
-                                articlesHtml += '<p class="prixx">' + article.prix + ' <del class="dell">' + article.khasm + '</del></p>';
-                                articlesHtml += '<p class="rate">';
-                                articlesHtml += '<i class="fa-solid fa-star"></i>';
-                                articlesHtml += '<i class="fa-solid fa-star"></i>';
-                                articlesHtml += '<i class="fa-solid fa-star"></i>';
-                                articlesHtml += '<i class="fa-solid fa-star"></i>';
-                                articlesHtml += '<i class="fa-solid fa-star-half"></i>';
-                                articlesHtml += '</p>';
-                                articlesHtml += '</div>';
-                                articlesHtml += '<div class="line"><hr></div>';
-                                articlesHtml += '<div class="iconshop">';
-                                articlesHtml += '<button class="addto" name="ddd" data-idproduct="' + article.idproduct + '">';
-                                articlesHtml += '<i class="fa-solid fa-cart-shopping"></i>';
-                                articlesHtml += '</button>';
-                                articlesHtml += '</div>';
-                                articlesHtml += '</div>';
-                            });
-
-                            $('#articles-container').append(articlesHtml);
-                            offset += response.length;
-                        } else {
-                            $('#show-more-btn').hide();
-                        }
-                    },
-                    error: function(error) {
-                        console.log(error);
-                    }
+            $(document).ready(function() {
+                $('#show-more-btn').on('click', function() {
+                    $('#loading-spinner').removeClass('hidden');
+            
+                    setTimeout(function() {
+                        $.ajax({
+                            url: 'fetch_articles.php',
+                            type: 'GET',
+                            data: { offset: offset },
+                            dataType: 'json',
+                            success: function(response) {
+                                // Hide loading spinner
+                                $('#loading-spinner').addClass('hidden');
+            
+                                if (response.length > 0) {
+                                    var articlesHtml = '';
+            
+                                    response.forEach(function(article) {
+                                        // Build HTML for additional products
+                                        articlesHtml += '<div class="card">';
+                                        articlesHtml += '<div class="image">';
+                                        articlesHtml += '<img src="imagee/' + article.image + '" alt="image product">';
+                                        articlesHtml += '</div>';
+                                        articlesHtml += '<div class="infoP">';
+                                        articlesHtml += '<p class="title">' + article.title + '</p>';
+                                        articlesHtml += '<p class="prixx">' + article.prix + ' <del class="dell">' + article.khasm + '</del></p>';
+                                        articlesHtml += '<p class="rate">';
+                                        articlesHtml += '<i class="fa-solid fa-star"></i>';
+                                        articlesHtml += '<i class="fa-solid fa-star"></i>';
+                                        articlesHtml += '<i class="fa-solid fa-star"></i>';
+                                        articlesHtml += '<i class="fa-solid fa-star"></i>';
+                                        articlesHtml += '<i class="fa-solid fa-star-half"></i>';
+                                        articlesHtml += '</p>';
+                                        articlesHtml += '<div class="line"><hr></div>';
+                                        articlesHtml += '<div class="iconshop">';
+                                        articlesHtml += '<button class="addto" name="ddd" data-idproduct="' + article.idproduct + '">';
+                                        articlesHtml += '<i class="fa-solid fa-cart-shopping"></i>';
+                                        articlesHtml += '</button>';
+                                        articlesHtml += '</div>';
+                                        articlesHtml += '</div>';
+                                        articlesHtml += '</div>';
+                                    });
+            
+                                    $('#articles-container').append(articlesHtml).removeClass('hidden');
+                                    offset += response.length;
+                                } else {
+                                    $('#show-more-btn').hide();
+                                }
+                            },
+                            error: function(error) {
+                                console.log(error);
+                                $('#loading-spinner').addClass('hidden');
+                            }
+                        });
+                    }, 1000); 
                 });
             });
+            
             $(document).on('click', '.addto', function() {
                 var clickedProductId  = $(this).data('idproduct');
                 idproduct = clickedProductId;
@@ -115,12 +125,15 @@
             // 111111111111111111111111111111111111111111111111111111111111111111
             var offset = 4;
             $('#show-more-btn-men').on('click', function() {
+                $('#loading-spinne').removeClass('hidden');
+                setTimeout(function() {
                 $.ajax({
                     url: 'fetch_articlesMen.php',
                     type: 'GET',
                     data: { offset: offset },
                     dataType: 'json',
                     success: function(response) {
+                        $('#loading-spinne').addClass('hidden');
                         if (response.length > 0) {
                             var articlesHtml = '';
                             response.forEach(function(article) {
@@ -147,7 +160,7 @@
                                 articlesHtml += '</div>';
                                 articlesHtml += '</div>';
                             });
-                            $('#articles-containerMen').append(articlesHtml);
+                            $('#articles-containerMen').append(articlesHtml).removeClass('hidden');
                             offset += response.length;
                         } else {
                             $('#show-more-btn-men').hide();
@@ -155,8 +168,10 @@
                     },
                     error: function() {
                         console.log('Error occurred while fetching articles.');
+                        $('#loading-spinner').addClass('hidden');
                     }
                 });
+            }, 1000); 
             });
             // 222222222222222222222222222222222222222222222222222222222
 
@@ -244,12 +259,15 @@
             var offset = 4;
 
 $('#show-more-btn-Women').on('click', function() {
+    $('#loading-spinn').removeClass('hidden');
+    setTimeout(function() {
     $.ajax({
         url: 'fetch_articlesWomen.php',
         type: 'GET',
         data: { offset: offset },
         dataType: 'json',
         success: function(response) {
+            $('#loading-spinn').addClass('hidden');
             if (response.length > 0) {
                 var articlesHtml = '';
 
@@ -277,7 +295,7 @@ $('#show-more-btn-Women').on('click', function() {
                     articlesHtml += '</div>';
                     articlesHtml += '</div>';
                 });
-                $('#articles-containerWomen').append(articlesHtml);
+                $('#articles-containerWomen').append(articlesHtml).removeClass('hidden');
                 offset += response.length;
             } else {
                 $('#show-more-btn-Women').hide();
@@ -285,8 +303,11 @@ $('#show-more-btn-Women').on('click', function() {
         },
         error: function() {
             console.log('Error occurred while fetching articles.');
+            $('#loading-spinner').addClass('hidden');
+
         }
     });
+}, 1000); 
 });
 
 

@@ -20,7 +20,15 @@
 </head>
 <body>
     <div class="first_off">
-        <p> Today Offer: $20 OFF orders $300 or more with code “SNEAKER002” + Free shipping on orders over $60!</p>
+    <?php
+                $sql="SELECT * FROM discount WHERE `when` = 'header' ORDER BY id DESC LIMIT 1";
+                $reqq=$db->prepare($sql);
+                $reqq->execute();
+               while($donnees=$reqq->fetch()){
+
+            ?>
+        <p> <?php  echo $donnees["title"] ?> </p>
+        <?php }?>
     </div>
     <header id="headerr">
         <div class="logo">
@@ -46,7 +54,7 @@
                 </a>
 
                 <a href="#Featured Products" class="navlink" >
-                    Featured Products
+                    Best Seller
                     <div class="line"></div>
                 </a>
 
@@ -74,18 +82,25 @@
             <span id="quantity" class="quantity">0</span>
         </div>
     </header>
+<?php 
+            $sql="SELECT * FROM firstpage ORDER BY id DESC LIMIT 1";
+            $reqq=$db->prepare($sql);
+            $reqq->execute();
+           while($donnees=$reqq->fetch()){
 
-    <div class="firstPage">
-        <div class="offside1">
-            <h1>XTREMA 3</h1>
-            <h4>COMFY AND TRENDY</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem alias reiciendis quod illo, cupiditate obcaecati iste </p>
+        ?>
+    <div class="firstPage" style="background-image: url('<?php echo $donnees["homeImage"]; ?>');">
+        
+        <div class="offside1" >
+            <h1><?php  echo $donnees["title"] ?></h1>
+            <h4><?php  echo $donnees["subTitle"] ?></h4>
+            <p><?php  echo $donnees["description"] ?></p>
             <div class='newp'>
                 <div class="newpi1">
-                    <img src="img/black-sneaker.png"  alt="">
+                    <img src="<?php  echo $donnees["imageOne"] ?>" alt="">
                 </div>
                 <div class="newpi1">
-                    <img src="img/xtrema-e1616727531673 (1).png" alt="">
+                    <img src="<?php  echo $donnees["imageTwo"] ?>" alt="">
                 </div>
             </div>
             <button class="newpBtn">SHOP HERE</button>
@@ -93,13 +108,14 @@
         <div class="offside2">
             <div class="aa1">
                 <i class="fa-solid fa-shoe-prints"></i>
-                <h3>STRONG & TRENDY</h3>
+                <h3><?php  echo $donnees["txt1"] ?></h3>
             </div>
             <div class="aa2">
                 <i class="fa-solid fa-feather"></i>
-                <h3>ZUPER LIGHTWEIGHT</h3>
+                <h3><?php  echo $donnees["txt2"] ?></h3>
             </div>
         </div>
+        <?php }?>
     </div>
     
 
@@ -196,12 +212,52 @@
             </div>
 
         </div> -->
-        
+        <div class="hotproduct">
+            
+            
+            <div class="H_P_Cart">
+                    <img src="img/p1.png" alt="">
+                    <h3 class="title">NIKA – SKORTA S BLACK</h3>
+                    <h3 class="prix">$20.00</h3>
+                    <button>SELECT OPTION</button>
+            </div>
+            <div class="H_P_Cart">
+                    <img src="img/p2.png" alt="">
+                    <h3 class="title">NIKA – SKORTA S BLACK</h3>
+                    <h3 class="prix">$20.00</h3>
+                    <button>SELECT OPTION</button>
+            </div>
+            <div class="H_P_Cart">
+                    <img src="img/p3.png" alt="">
+                    <h3 class="title">NIKA – SKORTA S BLACK</h3>
+                    <h3 class="prix">$20.00</h3>
+                    <button>SELECT OPTION</button>
+            </div>
+            <div class="H_P_Cart">
+                    <img src="img/p4.png" alt="">
+                    <h3 class="title">NIKA – SKORTA S BLACK</h3>
+                    <h3 class="prix">$20.00</h3>
+                    <button>SELECT OPTION</button>
+            </div>
+                
+                
+            
+            <div class="hotPside">
+                    <h2 class="tttppp">HOT PRODUCT. <span> </span><i class="fa-solid fa-fire"></i></h2>
+                    <p>Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit.
+                        Ut elit tellus, luctus nec
+                        ullamcorper mattis, pulvinar dapibus 
+                        leo.
+                    </p>
+                    <button>SEE MORE <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+        </div>
 
                 <!-- Featured Products dfddddddddddddddddddddddddddddddddddddddddddddddd -->
 
         <div class="allP">
-            <h1 id="Featured Products">Featured Products</h1>
+            <h1 id="Featured Products">Best Seller</h1>
         </div>
 
         <div class="main" id="articles-container">
@@ -215,19 +271,17 @@
 
                 <div class="infoP">
                         <p class="title"><?php echo $donnees["title"]; ?></p>
-                        <p class="prixx"><?php echo $donnees["prix"]; ?><span class="prixx">$</span></p>
-                        <del class="dell"><?php echo $donnees["khasm"]; ?></del>
+                        <p class="prixx"><?php echo $donnees["prix"]; ?><span class="prixx">$</span><span><del class="dell"><?php echo $donnees["khasm"]; ?></del></span></p>
+                        
                         <p class="rate">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                         </p>
                         <div class="iconshop">
-                            <!-- <form action="" method="post" > -->
                                 <button  class="addto" name="ddd" data-idproduct="<?=$donnees['idproduct']?>">
                                     <i class="fa-solid fa-cart-shopping"></i>
                                 </button>
-                            <!-- </form> -->
                         </div>
                     </div>
 
@@ -235,10 +289,15 @@
             <?php   } ?>
 
         </div>
-        
+
         <div class="ShowMore">
-            <button id="show-more-btn" class="btn-show-more">Show More</button>
+            <button id="show-more-btn" class="btn-show-more">Show More <i class="fa-solid fa-arrow-down"></i></button>
         </div>
+        <div id="loading-spinner" class="spinner hidden">
+            
+        </div>
+        
+
         
         <script>
                 // $(document).ready(function() {
@@ -360,15 +419,26 @@
         <!-- slid2 dfddddddddddddddddddddddddddddddddddddddddddddddd -->
 
         <div class="collection">
+            
             <div class="side1">
-                <img src="imagee/side11.jpg" alt="image">
-                <h1>Adidas </h1>
+                <img src="img/nike-just-do-it.jpg" alt="">
+                <div class="leftSide">
+                    <h5>new arrivals</h5>
+                    <h3>Air Jordan 1s</h3>
+                    <button>SHOP</button>
+                </div>
+                
+            </div>
+            <div class="side2">
+                <img src="img/nike-just-do-it (1).jpg" alt="">
+                <div class="rightSide">
+                    <h5>hook fleece</h5>
+                    <h3>Air Taitan</h3>
+                    <button>SHOP</button>
+                </div>
+              
             </div>
 
-            <div class="side2">
-                <img src="imagee/side2.jpg" alt="image">
-                <h1> Nike</h1>
-            </div>
         </div>
 
 
@@ -419,8 +489,11 @@
         
         </div>
         <div class="ShowMore">
-            <button id="show-more-btn-men" class="btn-show-more">Show More</button>
+            <button id="show-more-btn-men" class="btn-show-more">Show More  <i class="fa-solid fa-arrow-down"></i></button>
         </div>
+        <div id="loading-spinne" class="spinner hidden">
+            
+            </div>
         <script>
 // $(document).ready(function() {
 //             var offset = 4;
@@ -473,7 +546,7 @@
     </script>
         <!-- Unique Shoes dfddddddddddddddddddddddddddddddddddddddddddddddd -->
 
-      <div class="allP">
+        <div class="allP">
             <h1 id="Unique Shoes">Unique Shoes</h1>
         </div>
         <div class="wrapper">
@@ -630,8 +703,11 @@
 
 
         <div class="ShowMore" id='show-more'>
-            <button id="show-more-btn-Women" class="btn-show-more">Show More</button>
+            <button id="show-more-btn-Women" class="btn-show-more">Show More  <i class="fa-solid fa-arrow-down"></i></button>
         </div>
+        <div id="loading-spinn" class="spinner hidden">
+            
+            </div>
         <script>
 // $(document).ready(function() {
 //             var offset = 4;
