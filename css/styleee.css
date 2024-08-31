@@ -121,7 +121,7 @@
             border: none;
             margin-bottom:10px;
             background-color: transparent;
-            position: absolute;
+            position: fixed;
             width: 100%;
             padding: 15px 0;
             transition: background-color 0.9s ease, top 0.5s ease;
@@ -136,6 +136,7 @@
             display: flex;
             /* background-image: url("../img/2back.PNG"); */
             background-size: cover;
+            background-repeat: no-repeat;
             height: 100vh;
             text-align: center;
             padding-top: 100px;
@@ -143,7 +144,7 @@
         }
         .firstPage .offside1 {
             width: 50%;
-            position: relative;
+            /* position: relative; */
             display: flex; /* Add this line to make the children flex items */
             align-items: flex-start;
             flex-direction: column;
@@ -181,7 +182,7 @@
         .firstPage .offside2 {
             width: 50%;
             margin-top: 40px;
-            position: relative;
+            /* position: relative; */
         }
        
         .firstPage .offside2 .aa1{
@@ -191,9 +192,7 @@
             width:fit-content;
             background-color: rgba(255, 255, 255, 0.5);;
             padding: 15px;
-            position: absolute;
-            top: -10%;
-            left: -12%;
+        
             cursor:pointer;   
         } 
         .firstPage .offside2 .aa2{
@@ -204,8 +203,8 @@
             background-color: rgba(255, 255, 255, 0.5);;
             padding: 15px;
             position: absolute;
-            top: 60%;
-            left: 40%;
+            top: 80%;
+            left: 70%; 
             cursor:pointer;   
         } 
         .firstPage .offside2 .aa1 h3 {
@@ -270,7 +269,7 @@
        
         .nav-side {
             margin-right:30px;
-            position: relative;
+            /* position: relative; */
             display:flex;
             justify-content:space-between;
             align-items:center;         
@@ -372,6 +371,9 @@
         .nav-icon  i:hover{
             color: #528779
         }
+        .nav-icon {
+            display: flex;
+        }
         .nav-icon  .quantity{
             background: red;
             border-radius: 50%;
@@ -384,10 +386,85 @@
             left: 98%;
             padding:0px 5px;
         }
+        .search-items{
+            width: 100%;
+            margin-top: 4%;
+            margin: 2%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            
+        }
+        .search-items .search_card{
+            width: 20%;
+            cursor: pointer;
+        } 
+        .search-items .search_card img{
+            width: 60%;
+        } 
+        .searchh {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            background-color: hsl(0, 0%, 100%);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .4s;
+            
+        }
+        .search{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transform: translateY(-1rem);
+            transition: transform .4s; 
+        }
+
+        .search__close {
+            
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .search__form {
+            display: flex;
+            align-items: center; 
+        }
+        .search__icon {  
+            font-size: 1.5rem;
+            color: black;
+        }
+        .search__input {
+            width: 60%;
+            padding: 1rem;
+            margin: 20px;
+            border: none;
+            background-color: #e3e3e5;
+        }
+        .search__input::placeholder {
+            color: var(--text-color);
+        }
+          
+          /* Show search */
+        .show-search {
+            opacity: 1;
+            pointer-events: initial;
+        }
+          
+        .show-search .search{
+            transform: translateY(0);
+        }
+        .blur {
+            filter: blur(5px); 
+            pointer-events: none; 
+        }
+
         /* add to cart css */
         .cart{
             position: fixed;
-            top:0;
+            top:10%;
             left:100%;
             width: 500px;
             background-color: white;
@@ -398,12 +475,12 @@
         .active .cart{
             left: calc(100% - 500px);
         }
-        .active .container{
+        /* .active .container{
             transform: translateX(-200px);
         }
         .active header{
             transform: translateX(-200px);
-        }
+        } */
         .cart h1{
             justify-content:center;
             color: black;

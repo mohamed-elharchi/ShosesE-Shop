@@ -1,4 +1,17 @@
 
+
+let opencard = document.querySelector("#opencard");
+let closeShopping = document.querySelector('.closeShopping');
+let DD = document.querySelector('body');
+
+opencard.addEventListener('click', ()=>{
+    DD.classList.add('active');
+})
+closeShopping.addEventListener('click', ()=>{
+    DD.classList.remove('active');
+})
+
+
         var totalQuantity = 0;
         var totalPrice = 0;
         $(document).ready(function() {
@@ -404,3 +417,23 @@ $('#show-more-btn-Women').on('click', function() {
             });
         });
 
+
+
+        const search = document.getElementById('searchh');
+        const searchBtn = document.getElementById('search-btn');
+        const searchClose = document.getElementById('search-close');
+        const firstPage = document.querySelector('.container');
+        const body = document.body;
+        
+        /* Search show */
+        searchBtn.addEventListener('click', () => {
+            search.classList.add('show-search');
+            firstPage.classList.add('blur');
+        });
+        
+        /* Search hidden */
+        searchClose.addEventListener('click', () => {
+            search.classList.remove('show-search');
+            firstPage.classList.remove('blur');
+        });
+        

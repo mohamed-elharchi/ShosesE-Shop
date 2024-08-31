@@ -1048,7 +1048,7 @@ include "connexion.php" ;
         dd.onclick = function(e){
             e.preventDefault();
         }
-        let ff=document.querySelector("#add-too");
+        let ff=document.querySelecetor("#add-too");
         ff.onclick = function(e){
             e.preventDefault();
         }

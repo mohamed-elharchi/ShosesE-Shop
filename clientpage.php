@@ -75,13 +75,47 @@
 
     </nav>
         <div class="nav-icon">
-            <i class="fa-solid fa-magnifying-glass"></i>
+           
+            <i class="fa-solid fa-magnifying-glass search__btn"  id="search-btn"></i>
             <span class="line3amodi"></span>
             <i class="fa-solid fa-user"></i>
             <i id="opencard" class="fa-solid fa-cart-shopping"></i>
             <span id="quantity" class="quantity">0</span>
         </div>
     </header>
+    <div class="searchh" id="searchh">
+        <div class="search" id="search">
+            <h3>Urban Strides</h3>
+            <form action="" class="search__form">
+                <i class="fa-solid fa-magnifying-glass search__icon"></i>
+                <input type="search" placeholder="search bar" class="search__input">
+            </form>
+            <i class="fa-solid fa-x search__close" id="search-close" ></i>
+        </div>
+        <!-- <div class="search-items">
+            <div class="search_card">
+                <img src="img/p3.png" alt="">
+                <h3>mohamed elarchi</h3>
+                
+            </div>
+            <div class="search_card">
+                <img src="img/p3.png" alt="">
+                <h3>mohamed elarchi</h3>
+                
+            </div>
+            <div class="search_card">
+                <img src="img/p3.png" alt="">
+                <h3>mohamed elarchi</h3>
+                
+            </div>
+            <div class="search_card">
+                <img src="img/p3.png" alt="">
+                <h3>mohamed elarchi</h3>
+                
+            </div>
+         
+        </div> -->
+    </div>
 <?php 
             $sql="SELECT * FROM firstpage ORDER BY id DESC LIMIT 1";
             $reqq=$db->prepare($sql);
@@ -1155,12 +1189,11 @@ $('#show-more-btn-Women').on('click', function() {
     <div id="displayDataDiv"></div>
     <div id="ppp"></div>
 
-    
-    
+    <!-- <script src="js/addToCardt.js"></script> -->
+    <script src="js/Clientdata.js"></script>
     <script src="https://www.paypal.com/sdk/js?client-id=AV-pW4-8aoU0V_VF-eODSI8iGQ1cMQNTd1ETR6sx-uPykg0OLktUN2hDd9EZkeuOPUfBIhQ1K5ZbjE9F"></script>
     <script src="js/scrol-slid.js"></script>
-    <script src="js/clientdata.js"></script>
-    <script src="js/AddToCardt.js"></script>
+    
     <script src="js/menuTogle.js"></script>
         
 </body>
